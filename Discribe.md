@@ -1,4 +1,6 @@
 ### 需求1：运行复现H2O
+使用py38torch231环境
+
 安装了isaac-gym，并测试了example，但是错误出现在没有安装Vulkan图形库，这是一个和OpenGL一致的库。并且也难以加载对应的CUDA lib，鉴于该库似乎即将废弃，我需要想办法迁移到isaac-sim环境下
 
 在尝试进行Retarget步骤时，依旧需要调用gym的库，按照GPT的指示，可以将手动连接anaconda下的libpython3.8.so.1.0
@@ -15,3 +17,6 @@ pip install git+https://github.com/ZhengyiLuo/SMPLSim.git@master
 运行了grad_fit_h1.py，对于第一个AMASS文件，内部有252个子动作，使用GPU和CPU没有本质的区别
 
 运行了scripts/vis/vis_motion.py，报错需要Vulkan
+
+### 需求2：尝试用issac-lab代替gym的可视化
+阅读scripts/vis/vis_motion.py，发现是用gym写的，issac-lab的安装还未完成
